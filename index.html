@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="images/icons8-данные-32.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;1,200;1,300&display=swap" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <title>Portfolio</title>
+</head>
+
+<body>
+  <!-- Sprite -->
+  <svg display="none" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="behance" viewBox="0 0 511.958 511.958">
+      <g>
+        <path d="M210.624,240.619c10.624-5.344,18.656-11.296,24.16-17.728c9.792-11.584,14.624-26.944,14.624-45.984
+          c0-18.528-4.832-34.368-14.496-47.648c-16.128-21.632-43.424-32.704-82.016-33.28H0v312.096h142.56
+          c16.064,0,30.944-1.376,44.704-4.192c13.76-2.848,25.664-8.064,35.744-15.68c8.96-6.624,16.448-14.848,22.4-24.544
+          c9.408-14.656,14.112-31.264,14.112-49.76c0-17.92-4.128-33.184-12.32-45.728C238.912,255.627,226.752,246.443,210.624,240.619z
+            M63.072,150.187h68.864c15.136,0,27.616,1.632,37.408,4.864c11.328,4.704,16.992,14.272,16.992,28.864
+          c0,13.088-4.32,22.24-12.864,27.392c-8.608,5.152-19.776,7.744-33.472,7.744H63.072V150.187z M171.968,348.427
+          c-7.616,3.68-18.336,5.504-32.064,5.504H63.072v-83.232h77.888c13.568,0.096,24.128,1.888,31.68,5.248
+          c13.44,6.08,20.128,17.216,20.128,33.504C192.768,328.651,185.856,341.579,171.968,348.427z"/>
+        <rect x="327.168" y="110.539" width="135.584" height="38.848"/>
+        <path d="M509.856,263.851c-2.816-18.08-9.024-33.984-18.688-47.712c-10.592-15.552-24.032-26.944-40.384-34.144
+          c-16.288-7.232-34.624-10.848-55.04-10.816c-34.272,0-62.112,10.72-83.648,32c-21.472,21.344-32.224,52.032-32.224,92.032
+          c0,42.656,11.872,73.472,35.744,92.384c23.776,18.944,51.232,28.384,82.4,28.384c37.728,0,67.072-11.232,88.032-33.632
+          c13.408-14.144,20.992-28.064,22.656-41.728H446.24c-3.616,6.752-7.808,12.032-12.608,15.872
+          c-8.704,7.04-20.032,10.56-33.92,10.56c-13.216,0-24.416-2.912-33.76-8.704c-15.424-9.28-23.488-25.536-24.512-48.672h170.464
+          C512.16,289.739,511.52,274.411,509.856,263.851z M342.976,269.835c2.24-15.008,7.68-26.912,16.32-35.712
+          c8.64-8.768,20.864-13.184,36.512-13.216c14.432,0,26.496,4.128,36.32,12.416c9.696,8.352,15.168,20.48,16.288,36.512H342.976z"
+          />
+      </g>
+    </symbol>
+
+    <symbol id="dribble" viewBox="0 0 473.325 473.325">
+      <g>
+        <path style="fill-rule:evenodd;clip-rule:evenodd;" d="M236.662,473.297C106.162,473.297,0,367.127,0,236.65
+          C0,106.197,106.162,0.028,236.662,0.028S473.325,106.197,473.325,236.65C473.325,367.127,367.162,473.297,236.662,473.297z
+          M425.801,267.356c-6.547-2.041-59.293-17.799-119.316-8.197c25.055,68.838,35.256,124.943,37.212,136.571
+          C386.67,366.675,417.274,320.656,425.801,267.356z M311.502,413.281c-2.867-16.803-13.988-75.386-40.884-145.254
+          c-0.405,0.141-0.826,0.265-1.263,0.421c-108.032,37.619-146.819,112.584-150.271,119.629
+          c32.467,25.313,73.297,40.424,117.578,40.424C263.191,428.5,288.496,423.06,311.502,413.281z M94.348,365.024
+          c4.332-7.435,56.914-94.473,155.704-126.409c2.501-0.811,5.018-1.559,7.543-2.261c-4.801-10.902-10.029-21.767-15.53-32.521
+          c-95.657,28.633-188.484,27.448-196.879,27.262c-0.055,1.948-0.085,3.904-0.085,5.852C45.101,286.154,63.75,331.068,94.348,365.024
+          z M49.145,197.723c8.574,0.108,87.49,0.436,177.099-23.334c-31.735-56.432-65.972-103.871-71.03-110.775
+          C101.626,88.879,61.56,138.282,49.145,197.723z M191.773,50.747c5.299,7.084,40.088,54.453,71.48,112.131
+          c68.129-25.561,96.949-64.287,100.387-69.182c-33.823-30.035-78.309-48.264-126.979-48.264
+          C221.201,45.432,206.175,47.271,191.773,50.747z M384.939,115.822c-4.029,5.472-36.145,46.62-106.965,75.51
+          c4.459,9.15,8.728,18.439,12.719,27.761c1.396,3.32,2.774,6.609,4.115,9.882c63.742-8.012,127.072,4.824,133.408,6.18
+          C427.787,189.945,411.632,148.429,384.939,115.822z"/>
+      </g>
+    </symbol>
+
+    <symbol id="linkedin" viewBox="0 0 24 24">
+      <g><path d="m23.994 24v-.001h.006v-8.802c0-4.306-.927-7.623-5.961-7.623-2.42 0-4.044 1.328-4.707 2.587h-.07v-2.185h-4.773v16.023h4.97v-7.934c0-2.089.396-4.109 2.983-4.109 2.549 0 2.587 2.384 2.587 4.243v7.801z"/><path d="m.396 7.977h4.976v16.023h-4.976z"/><path d="m2.882 0c-1.591 0-2.882 1.291-2.882 2.882s1.291 2.909 2.882 2.909 2.882-1.318 2.882-2.909c-.001-1.591-1.292-2.882-2.882-2.882z"/>
+      </g>
+    </symbol>
+
+    <symbol id="facebook" viewBox="0 0 24 24">
+      <g>
+        <path d="m15.997 3.985h2.191v-3.816c-.378-.052-1.678-.169-3.192-.169-3.159 0-5.323 1.987-5.323 5.639v3.361h-3.486v4.266h3.486v10.734h4.274v-10.733h3.345l.531-4.266h-3.877v-2.939c.001-1.233.333-2.077 2.051-2.077z"/>
+      </g>
+    </symbol>
+
+    <symbol id="instagram" viewBox="0 0 511 511.9">
+      <g>
+        <path d="m510.949219 150.5c-1.199219-27.199219-5.597657-45.898438-11.898438-62.101562-6.5-17.199219-16.5-32.597657-29.601562-45.398438-12.800781-13-28.300781-23.101562-45.300781-29.5-16.296876-6.300781-34.898438-10.699219-62.097657-11.898438-27.402343-1.300781-36.101562-1.601562-105.601562-1.601562s-78.199219.300781-105.5 1.5c-27.199219 1.199219-45.898438 5.601562-62.097657 11.898438-17.203124 6.5-32.601562 16.5-45.402343 29.601562-13 12.800781-23.097657 28.300781-29.5 45.300781-6.300781 16.300781-10.699219 34.898438-11.898438 62.097657-1.300781 27.402343-1.601562 36.101562-1.601562 105.601562s.300781 78.199219 1.5 105.5c1.199219 27.199219 5.601562 45.898438 11.902343 62.101562 6.5 17.199219 16.597657 32.597657 29.597657 45.398438 12.800781 13 28.300781 23.101562 45.300781 29.5 16.300781 6.300781 34.898438 10.699219 62.101562 11.898438 27.296876 1.203124 36 1.5 105.5 1.5s78.199219-.296876 105.5-1.5c27.199219-1.199219 45.898438-5.597657 62.097657-11.898438 34.402343-13.300781 61.601562-40.5 74.902343-74.898438 6.296876-16.300781 10.699219-34.902343 11.898438-62.101562 1.199219-27.300781 1.5-36 1.5-105.5s-.101562-78.199219-1.300781-105.5zm-46.097657 209c-1.101562 25-5.300781 38.5-8.800781 47.5-8.601562 22.300781-26.300781 40-48.601562 48.601562-9 3.5-22.597657 7.699219-47.5 8.796876-27 1.203124-35.097657 1.5-103.398438 1.5s-76.5-.296876-103.402343-1.5c-25-1.097657-38.5-5.296876-47.5-8.796876-11.097657-4.101562-21.199219-10.601562-29.398438-19.101562-8.5-8.300781-15-18.300781-19.101562-29.398438-3.5-9-7.699219-22.601562-8.796876-47.5-1.203124-27-1.5-35.101562-1.5-103.402343s.296876-76.5 1.5-103.398438c1.097657-25 5.296876-38.5 8.796876-47.5 4.101562-11.101562 10.601562-21.199219 19.203124-29.402343 8.296876-8.5 18.296876-15 29.398438-19.097657 9-3.5 22.601562-7.699219 47.5-8.800781 27-1.199219 35.101562-1.5 103.398438-1.5 68.402343 0 76.5.300781 103.402343 1.5 25 1.101562 38.5 5.300781 47.5 8.800781 11.097657 4.097657 21.199219 10.597657 29.398438 19.097657 8.5 8.300781 15 18.300781 19.101562 29.402343 3.5 9 7.699219 22.597657 8.800781 47.5 1.199219 27 1.5 35.097657 1.5 103.398438s-.300781 76.300781-1.5 103.300781zm0 0"/><path d="m256.449219 124.5c-72.597657 0-131.5 58.898438-131.5 131.5s58.902343 131.5 131.5 131.5c72.601562 0 131.5-58.898438 131.5-131.5s-58.898438-131.5-131.5-131.5zm0 216.800781c-47.097657 0-85.300781-38.199219-85.300781-85.300781s38.203124-85.300781 85.300781-85.300781c47.101562 0 85.300781 38.199219 85.300781 85.300781s-38.199219 85.300781-85.300781 85.300781zm0 0"/><path d="m423.851562 119.300781c0 16.953125-13.746093 30.699219-30.703124 30.699219-16.953126 0-30.699219-13.746094-30.699219-30.699219 0-16.957031 13.746093-30.699219 30.699219-30.699219 16.957031 0 30.703124 13.742188 30.703124 30.699219zm0 0"/>
+      </g>
+    </symbol>
+
+    <symbol id="twitter" viewBox="0 0 512 512">
+      <g>
+        <path d="M512,97.248c-19.04,8.352-39.328,13.888-60.48,16.576c21.76-12.992,38.368-33.408,46.176-58.016
+          c-20.288,12.096-42.688,20.64-66.56,25.408C411.872,60.704,384.416,48,354.464,48c-58.112,0-104.896,47.168-104.896,104.992
+          c0,8.32,0.704,16.32,2.432,23.936c-87.264-4.256-164.48-46.08-216.352-109.792c-9.056,15.712-14.368,33.696-14.368,53.056
+          c0,36.352,18.72,68.576,46.624,87.232c-16.864-0.32-33.408-5.216-47.424-12.928c0,0.32,0,0.736,0,1.152
+          c0,51.008,36.384,93.376,84.096,103.136c-8.544,2.336-17.856,3.456-27.52,3.456c-6.72,0-13.504-0.384-19.872-1.792
+          c13.6,41.568,52.192,72.128,98.08,73.12c-35.712,27.936-81.056,44.768-130.144,44.768c-8.608,0-16.864-0.384-25.12-1.44
+          C46.496,446.88,101.6,464,161.024,464c193.152,0,298.752-160,298.752-298.688c0-4.64-0.16-9.12-0.384-13.568
+          C480.224,136.96,497.728,118.496,512,97.248z"/>
+      </g>
+    </symbol>
+
+    <symbol id="star" viewBox="0 0 512 512">
+      <g>
+        <polygon points="512,197.816 325.961,185.585 255.898,9.569 185.835,185.585 0,197.816 142.534,318.842 95.762,502.431
+          255.898,401.21 416.035,502.431 369.263,318.842 		"/>
+      </g>
+    </symbol>
+
+    <symbol id="star-half" viewBox="0 0 510 510">
+      <g id="star-half">
+        <path d="M510,197.472l-183.37-15.734L255,12.75l-71.629,168.988L0,197.472l0,0l0,0l139.103,120.539L97.41,497.25L255,402.186l0,0
+          l157.59,95.039l-41.692-179.239L510,197.472z M255,354.348V117.172l43.605,102.918l111.689,9.588l-84.711,73.389l25.398,109.166
+          L255,354.348z"/>
+      </g>
+    </symbol>
+
+    <symbol id="cross" viewBox="0 0 512 512">
+      <g>
+        <path d="m256 0c-141.49 0-256 114.5-256 256 0 141.49 114.5 256 256 256 141.49 0 256-114.5 256-256 0-141.49-114.5-256-256-256zm-12.284 317.397-58.121 58.132c-6.565 6.553-15.283 10.166-24.557 10.166-19.196 0-34.734-15.526-34.734-34.734 0-9.274 3.612-17.992 10.166-24.557l58.132-58.121c6.785-6.784 6.785-17.783 0-24.568l-58.132-58.121c-6.553-6.565-10.166-15.283-10.166-24.557 0-19.196 15.526-34.734 34.734-34.734 9.274 0 17.992 3.613 24.557 10.166l58.121 58.132c6.785 6.773 17.784 6.773 24.568 0l58.121-58.132c6.565-6.553 15.283-10.166 24.557-10.166 19.196 0 34.734 15.526 34.734 34.734 0 9.274-3.612 17.992-10.166 24.557l-58.132 58.121c-6.785 6.784-6.785 17.783 0 24.568l58.132 58.121c6.553 6.565 10.166 15.283 10.166 24.557 0 19.196-15.526 34.734-34.734 34.734-9.274 0-17.992-3.613-24.557-10.166l-58.121-58.132c-6.784-6.784-17.784-6.773-24.568 0z"/>
+      </g>
+    </symbol>
+
+    <symbol id="phone" viewBox="0 0 510 510">
+      <g>
+        <path d="M436.992,74.953c-99.989-99.959-262.08-99.935-362.039,0.055s-99.935,262.08,0.055,362.039s262.08,99.935,362.039-0.055
+          c48.006-48.021,74.968-113.146,74.953-181.047C511.986,188.055,485.005,122.951,436.992,74.953z M387.703,356.605
+          c-0.011,0.011-0.022,0.023-0.034,0.034v-0.085l-12.971,12.885c-16.775,16.987-41.206,23.976-64.427,18.432
+          c-23.395-6.262-45.635-16.23-65.877-29.525c-18.806-12.019-36.234-26.069-51.968-41.899
+          c-14.477-14.371-27.483-30.151-38.827-47.104c-12.408-18.242-22.229-38.114-29.184-59.051
+          c-7.973-24.596-1.366-51.585,17.067-69.717l15.189-15.189c4.223-4.242,11.085-4.257,15.326-0.034
+          c0.011,0.011,0.023,0.022,0.034,0.034l47.957,47.957c4.242,4.223,4.257,11.085,0.034,15.326c-0.011,0.011-0.022,0.022-0.034,0.034
+          l-28.16,28.16c-8.08,7.992-9.096,20.692-2.389,29.867c10.185,13.978,21.456,27.131,33.707,39.339
+          c13.659,13.718,28.508,26.197,44.373,37.291c9.167,6.394,21.595,5.316,29.525-2.56l27.221-27.648
+          c4.223-4.242,11.085-4.257,15.326-0.034c0.011,0.011,0.022,0.022,0.034,0.034l48.043,48.128
+          C391.911,345.502,391.926,352.363,387.703,356.605z"/>
+      </g>
+    </symbol>
+
+    <symbol id="e-mail" viewBox="0 0 510 510">
+      <g>
+        <path d="M10.688,95.156C80.958,154.667,204.26,259.365,240.5,292.01c4.865,4.406,10.083,6.646,15.5,6.646
+          c5.406,0,10.615-2.219,15.469-6.604c36.271-32.677,159.573-137.385,229.844-196.896c4.375-3.698,5.042-10.198,1.5-14.719
+          C494.625,69.99,482.417,64,469.333,64H42.667c-13.083,0-25.292,5.99-33.479,16.438C5.646,84.958,6.313,91.458,10.688,95.156z"/>
+        <path d="M505.813,127.406c-3.781-1.76-8.229-1.146-11.375,1.542C416.51,195.01,317.052,279.688,285.76,307.885
+          c-17.563,15.854-41.938,15.854-59.542-0.021c-33.354-30.052-145.042-125-208.656-178.917c-3.167-2.688-7.625-3.281-11.375-1.542
+          C2.417,129.156,0,132.927,0,137.083v268.25C0,428.865,19.135,448,42.667,448h426.667C492.865,448,512,428.865,512,405.333
+          v-268.25C512,132.927,509.583,129.146,505.813,127.406z"/>
+      </g>
+    </symbol>
+
+    <symbol id="arrow" viewBox="0 0 512.002 512.002">
+      <g>
+        <path d="M388.425,241.951L151.609,5.79c-7.759-7.733-20.321-7.72-28.067,0.04c-7.74,7.759-7.72,20.328,0.04,28.067l222.72,222.105
+          L123.574,478.106c-7.759,7.74-7.779,20.301-0.04,28.061c3.883,3.89,8.97,5.835,14.057,5.835c5.074,0,10.141-1.932,14.017-5.795
+          l236.817-236.155c3.737-3.718,5.834-8.778,5.834-14.05S392.156,245.676,388.425,241.951z"/>
+      </g>
+    </symbol>
+  </svg><!-- Sprite -->
+
+  <!-- header -->
+  <header class="header" data-header>
+    <!-- container -->
+    <div class="container">
+      <div class="header__inner">
+
+        <div class="user">
+          <div class="user__avatar">
+            <img class="img" src="https://via.placeholder.com/57/333" alt="">
+          </div>
+
+          <div class="user__info">
+            <div class="user__name">Lewis<br>Nathaniel</div>
+            <div class="user__job">UI &amp; UX Designer</div>
+          </div>
+        </div>
+
+        <nav class="nav">
+          <a class="nav__item" href="#" data-scroll="#work">work</a>
+          <a class="nav__item" href="#" data-scroll="#about">about me</a>
+          <a class="nav__item" href="#" data-scroll="#blog">blog</a>
+          <a class="nav__item" href="#">contact</a>
+          <a class="nav__item nav__item--btn" data-hire__me>hire me</a>
+        </nav>
+
+        <div class="burger" id="burger">
+          <input type="checkbox" id="checkMenu">
+          <label for="checkMenu">
+            <span class="burger__item"></span>
+            <nav class="burger__nav">
+              <a class="nav__item" href="#" data-scroll="#work">work</a>
+              <a class="nav__item" href="#" data-scroll="#about">about me</a>
+              <a class="nav__item" href="#" data-scroll="#blog">blog</a>
+              <a class="nav__item" href="#">contact</a>
+              <a class="nav__item nav__item--btn" data-hire__me>hire me</a>
+            </nav>
+          </label>
+        </div>
+      </div>
+    </div><!-- container -->
+  </header><!-- header -->
+
+  <!-- intro -->
+  <section class="intro" data-intro>
+    <div class="container">
+
+      <div class="intro__inner">
+
+        <div class="intro__content">
+          <div class="intro__title">
+            <h2 class="intro__subtitle">Hello, I’m</h2>
+            <h1 class="intro__mainTitle">Lewis Nathaniel</h1>
+            <p class="intro__text">UI &amp; UX Designer</p>
+          </div>
+
+          <div class="intro__socialButtons">
+            <button type="button" class="intro_button intro_button--behance">
+              <svg class="social__item">
+                <use xlink:href="#behance"></use>
+              </svg>
+            </button>
+            <button type="button" class="intro_button intro_button--dribble">
+              <svg class="social__item">
+                <use xlink:href="#dribble"></use>
+              </svg>
+            </button>
+            <button type="button" class="intro_button intro_button--in">
+              <svg class="social__item">
+                <use xlink:href="#linkedin"></use>
+              </svg>
+            </button>
+            <button type="button" class="intro_button intro_button--facebook">
+              <svg class="social__item">
+                <use xlink:href="#facebook"></use>
+              </svg>
+            </button>
+            <button type="button" class="intro_button intro_button--instagramm">
+              <svg class="social__item">
+                <use xlink:href="#instagram"></use>
+              </svg>
+            </button>
+            <button type="button" class="intro_button intro_button--twitter">
+              <svg class="social__item">
+                <use xlink:href="#twitter"></use>
+              </svg>
+            </button>
+          </div>
+          <button type="button" class="Button Button--first" data-hire__me>
+            <p>HIRE ME</p>
+          </button>
+          <button type="button" class="Button Button--second" data-resume>
+            <p>SEE MY RESUME </p>
+          </button>
+        </div>
+
+        <div class="intro__photo">
+          <img class="img" src="images/mainPhoto/photo.png" alt="">
+        </div>
+
+      </div>
+    </div>
+  </section><!-- intro -->
+
+  <!-- Work -->
+  <div class="work" id="work">
+    <div class="container">
+      <div class="work__filter">
+        <a href="#" class="work__filter-title" data-filter="all">All</a>
+        <a href="#" class="work__filter-title" data-filter="app">App</a>
+        <a href="#" class="work__filter-title" data-filter="website">Website</a>
+        <a href="#" class="work__filter-title" data-filter="interaction">Interaction</a>
+      </div>
+
+      <div class="work__projects">
+        <div class="work__item" data-modal="#project"data-category="app">
+          <img src="https://via.placeholder.com/370x300/#717072" alt="" class="img">
+          <div class="work__footer">
+            <p class="work__category">category: app</p>
+            <div class="work__footer-title">
+              <p class="work__title">project title</p>
+              <time class="work__year" datatime="2021-08-23 2:51">2021</time>
+            </div>
+          </div>
+        </div>
+
+        <div class="work__item" data-modal="#project"data-category="interaction">
+          <img src="https://via.placeholder.com/370x300/#717072" alt="" class="img">
+          <div class="work__footer">
+            <p class="work__category">category: interaction</p>
+            <div class="work__footer-title">
+              <p class="work__title">project title</p>
+              <time class="work__year" datatime="2021-08-23 2:51">2021</time>
+            </div>
+          </div>
+        </div>
+
+        <div class="work__item" data-modal="#project"data-category="app">
+          <img src="https://via.placeholder.com/370x300/#717072" alt="" class="img">
+          <div class="work__footer">
+            <p class="work__category">category: app</p>
+            <div class="work__footer-title">
+              <p class="work__title">project title</p>
+              <time class="work__year" datatime="2021-08-23 2:51">2021</time>
+            </div>
+          </div>
+        </div>
+
+        <div class="work__item" data-modal="#project"data-category="app">
+          <img src="https://via.placeholder.com/370x300/#717072" alt="" class="img">
+          <div class="work__footer">
+            <p class="work__category">category: app</p>
+            <div class="work__footer-title">
+              <p class="work__title">project title</p>
+              <time class="work__year" datatime="2021-08-23 2:51">2021</time>
+            </div>
+          </div>
+        </div>
+
+        <div class="work__item" data-modal="#project"data-category="website">
+          <img src="https://via.placeholder.com/370x300/#717072" alt="" class="img">
+          <div class="work__footer">
+            <p class="work__category">category: website</p>
+            <div class="work__footer-title">
+              <p class="work__title">project title</p>
+              <time class="work__year" datatime="2021-08-23 2:51">2021</time>
+            </div>
+          </div>
+        </div>
+
+        <div class="work__item" data-modal="#project"data-category="interaction">
+          <img src="https://via.placeholder.com/370x300/#717072" alt="" class="img">
+          <div class="work__footer">
+            <p class="work__category">category: interaction</p>
+            <div class="work__footer-title">
+              <p class="work__title">project title</p>
+              <time class="work__year" datatime="2021-08-23 2:51">2021</time>
+            </div>
+          </div>
+        </div>
+
+        <div class="work__item" data-modal="#project"data-category="website">
+          <img src="https://via.placeholder.com/370x300/#717072" alt="" class="img">
+          <div class="work__footer">
+            <p class="work__category">category: website</p>
+            <div class="work__footer-title">
+              <p class="work__title">project title</p>
+              <time class="work__year" datatime="2021-08-23 2:51">2021</time>
+            </div>
+          </div>
+        </div>
+
+        <div class="work__item" data-modal="#project"data-category="interaction">
+          <img src="https://via.placeholder.com/370x300/#717072" alt="" class="img">
+          <div class="work__footer">
+            <p class="work__category">category: interaction</p>
+            <div class="work__footer-title">
+              <p class="work__title">project title</p>
+              <time class="work__year" datatime="2021-08-23 2:51">2021</time>
+            </div>
+          </div>
+        </div>
+
+        <div class="work__item" data-modal="#project"data-category="interaction">
+          <img src="https://via.placeholder.com/370x300/#717072" alt="" class="img">
+          <div class="work__footer">
+            <p class="work__category">category: interaction</p>
+            <div class="work__footer-title">
+              <p class="work__title">project title</p>
+              <time class="work__year" datatime="2021-08-23 2:51">2021</time>
+            </div>
+          </div>
+        </div>
+
+        <div class="text__center">
+          <button type="button" class="Button Button--min">load more work</button>
+        </div>
+      </div> <!-- projects -->
+    </div> <!-- container -->
+  </div> <!-- Work -->
+
+  <!-- about -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about__inner">
+        <div class="about__photo">
+          <img src="images/aboutPhoto/designer_photo.png" alt="" class="img">
+        </div>
+
+        <div class="about__content">
+          <div class="about__text">
+            <h3>about me</h3>
+            <h2>who am i</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam consequatur eligendi quo, eius officiis corrupti quod sapiente accusantium ipsum. Earum beatae qui veritatis, reprehenderit rem numquam harum dignissimos vel ut sapiente quod, dicta quos eos aut sequi minus, nulla nisi sed? Suscipit magnam id eos enim, iusto non qui nesciunt neque consequatur quos quas dignissimos ipsum, odio ipsam magni? Maxime sapiente at quo temporibus ratione vel harum dolorum voluptas excepturi eveniet, dolor esse a, maiores commodi. Molestiae voluptate repudiandae voluptatibus unde veritatis, sapiente, voluptates atque sequi saepe labore consequatur soluta laudantium ad eligendi tempora voluptatum natus ducimus eum sit asperiores.</p>
+          </div>
+          <div class="about__buttons">
+            <button type="button" class="Button Button--first" data-hire__me>
+              <p>HIRE ME</p>
+            </button>
+            <button type="button" class="Button Button--second" data-resume>
+              <p>SEE MY RESUME</p>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><!-- about -->
+
+  <!-- Testimonials -->
+  <div class="testimonials">
+    <div class="container">
+
+      <div class="testimonials__inner">
+
+        <div class="testimonials__content">
+          <p class="testimonials__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque eu enim eget luctus. Sed augue felis, facilisis et elementum vitae, aliquam sit amet ante. Sed iaculis eros sem, elementum consequat est consequat eu. Quisque aliquet a ipsum nec tincidunt. Nulla vitae rhoncus leo. Praesent dui sapien, bibendum quis tempus dictum.</p>
+        </div>
+        <div class="testimonials__avatar">
+          <img class="testimonials__photo" src="https://via.placeholder.com/103/333" alt="">
+          <div class="testimonials__name">Edward M. Brooks</div>
+          <div class="testimonials__company">Marketing House</div>
+          <div class="testimonials__stars">
+            <svg class="testimonials__star">
+              <use xlink:href="#star"></use>
+            </svg>
+            <svg class="testimonials__star">
+              <use xlink:href="#star"></use>
+            </svg>
+            <svg class="testimonials__star">
+              <use xlink:href="#star"></use>
+            </svg>
+            <svg class="testimonials__star">
+              <use xlink:href="#star"></use>
+            </svg>
+
+            <svg class="testimonials__star">
+              <use xlink:href="#star-half"></use>
+            </svg>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div><!-- Testimonials -->
+
+  <!-- Blog -->
+  <section class="blog" id="blog">
+    <div class="container">
+      <div class="blog__inner">
+
+        <div class="blog__header">
+          <h2>read me</h2>
+          <h4>Sometimes i write something smart</h4>
+        </div>
+
+        <div class="blog__articals">
+          <div class="blog__item">
+            <a href="#">
+              <div class="blog__image">
+                <img class="img blog__photo" src="https://via.placeholder.com/370x257/#6A696B"></img>
+
+                <time class="blog__date">10<br>june</time>
+              </div>
+            </a>
+            <div class="blog__content">
+              <a href="#">
+                <div class="blog__title">TEN THE BEST APP IN 2017</div>
+              </a>
+              <div class="blog__category">category</div>
+              <div class="blog__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque eu enim eget luctus. Sed augue felis, facilisis et elementum vitae, aliquam sit amet ante. Sed iaculis eros sem, elementum consequat.</div>
+              <button class="Button Button--min">
+                <p>READ MORE</p>
+              </button>
+            </div>
+          </div>
+
+          <div class="blog__item">
+            <a href="#">
+              <div class="blog__image">
+                <img class="blog__photo" src="https://via.placeholder.com/370x257/#6A696B"></img>
+
+                <time class="blog__date">15<br>june</time>
+              </div>
+            </a>
+            <div class="blog__content">
+              <a href="#">
+                <div class="blog__title">WEBSITE INSPIRATION</div>
+              </a>
+              <div class="blog__category">category</div>
+              <div class="blog__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque eu enim eget luctus. Sed augue felis, facilisis et elementum vitae, aliquam sit amet ante. Sed iaculis eros sem, elementum consequat.</div>
+              <button class="Button Button--min">
+                <p>READ MORE</p>
+              </button>
+            </div>
+          </div>
+
+          <div class="blog__item">
+            <a href="#">
+              <div class="blog__image">
+                <img class="blog__photo" src="https://via.placeholder.com/370x257/#6A696B"></img>
+
+                <time class="blog__date">20<br>june</time>
+              </div>
+            </a>
+
+            <div class="blog__content">
+              <a href="#">
+                <div class="blog__title">CHANGES IN SOCIAL MEDIA</div>
+              </a>
+              <div class="blog__category">category</div>
+              <div class="blog__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque eu enim eget luctus. Sed augue felis, facilisis et elementum vitae, aliquam sit amet ante. Sed iaculis eros sem, elementum consequat.</div>
+              <button class="Button Button--min">
+                <p>READ MORE</p>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <a href="#" class="blog__button">See more posts</a>
+      </div>
+    </div>
+  </section><!-- Blog -->
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__left">
+          <div class="footer__text"><span>&copy; 2018 UI43 - Free Templates</span></div>
+          <div class="footer__buttons">
+            <button type="button" class="footer__button ">
+              <svg class="social__item social__item--footer">
+                <use xlink:href="#behance"></use>
+              </svg>
+            </button>
+            <button type="button" class="footer__button">
+              <svg class="social__item social__item--footer">
+                <use xlink:href="#dribble"></use>
+              </svg>
+            </button>
+            <button type="button" class="footer__button">
+              <svg class="social__item social__item--footer">
+                <use xlink:href="#linkedin"></use>
+              </svg>
+            </button>
+            <button type="button" class="footer__button">
+              <svg class="social__item social__item--footer">
+                <use xlink:href="#facebook"></use>
+              </svg>
+            </button>
+            <button type="button" class="footer__button">
+              <svg class="social__item social__item--footer">
+                <use xlink:href="#instagram"></use>
+              </svg>
+            </button>
+            <button type="button" class="footer__button">
+              <svg class="social__item social__item--footer">
+                <use xlink:href="#twitter"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="footer__right">
+          <nav class="footer__nav">
+            <a href="#">Work</a>
+            <a href="#">About me</a>
+            <a href="#">Blog</a>
+            <a href="#">Contact</a>
+          </nav>
+          <button class="Button Button--footer" data-hire__me>
+            <p>hire me</p>
+          </button>
+        </div>
+      </div>
+    </div>
+  </footer><!-- Footer -->
+
+  <!-- Project modal -->
+  <section class="Pmodal" id="project">
+    <div class="Pmodal__inner">
+      <div class="Pmodal__left">
+
+        <button type="button" class="cross__btn" data-close='project'>
+          <svg class="cross">
+            <use xlink:href="#cross"></use>
+          </svg>
+        </button>
+
+        <div class="Pmodal__slider">
+          <div class="Pmodal__slick" data-slick="Pmodal-slick">
+            <div>
+              <img class="Pmodal__photo" src="https://via.placeholder.com/787x774/717072" alt="">
+            </div>
+
+            <div>
+              <img class="Pmodal__photo" src="https://via.placeholder.com/787x774/333" alt="">
+            </div>
+
+            <div>
+              <img class="Pmodal__photo" src="https://via.placeholder.com/787x774/925858" alt="">
+            </div>
+          </div>
+        </div>
+      </div><!-- Pmodal__left -->
+
+      <div class="Pmodal__right">
+        <div class="Pmodal__header">
+          <button class="cross__btn cross__btn--adaptive" type="button" data-close='project'>
+            <svg class="cross">
+              <use xlink:href="#cross"></use>
+            </svg>
+          </button>
+        </div>
+
+        <div class="Pmodal__content">
+          <div class="Pmodal__title">
+            <h2>project title</h2>
+            <div class="Pmodal__subtitle">
+              <h3>category</h3>
+              <time>2021</time>
+            </div>
+          </div>
+
+          <div class="Pmodal__client">
+            <h4>Client:</h4>
+            <p>Creative Agency</p>
+          </div>
+
+          <div class="Pmodal__text">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pellentesque eu enim eget luctus. Sed augue felis, facilisis et elementum vitae, aliquam sit amet ante. Sed iaculis eros sem, elementum consequat est consequat eu. Quisque aliquet a ipsum nec tincidunt. Nulla vitae rhoncus leo. Praesent dui sapien, bibendum quis tempus dictum, auctor ac dui. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec at mauris porta, ullamcorper sem quis, lobortis sem. Donec sit amet aliquet dui, at varius est. Phasellus porttitor finibus neque vel vehicula. Duis in nulla egestas, dignissim elit at, imperdiet eros. Integer tristique posuere purus. Suspendisse placerat, quam vitae ullamcorper</p>
+          </div>
+        </div>
+
+        <div class="Pmodal__footer">
+          <div class="Pmodal__footer-inner">
+            <button class="Pmodal__btn  Pmodal__btn--prev">
+              <svg class="arrow  arrow--left">
+                <use xlink:href="#arrow"></use>
+              </svg>
+              <p class="Pmodal__footer-text">previous</p>
+            </button>
+
+            <button class="Pmodal__btn  Pmodal__btn--next">
+              <p class="Pmodal__footer-text">next</p>
+              <svg class="arrow">
+                <use xlink:href="#arrow"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div><!-- Pmodal__right -->
+    </div><!-- Pmodal__inner -->
+  </section><!-- Project modal -->
+
+  <!-- Resume modal -->
+  <section class="Pmodal" id="resume">
+    <div class="resume__inner">
+
+      <button type="button" class="cross__btn" data-close='resume'>
+        <svg class="cross">
+          <use xlink:href="#cross"></use>
+        </svg>
+      </button>
+
+      <h2 class="resume__title">resume</h2>
+      <div class="resume__buttons">
+        <button class="Button Button--award">download pdf</button>
+        <button class="Button Button--award">print</button>
+      </div>
+
+      <div class="resume__content">
+        <div class="resume__left">
+
+          <h3 class="resume__side-title">experience</h3>
+          <div class="resume__left-item">
+            <time class="resume__date">2017 - <span>Present</span></time>
+            <div class="resume__workplace">Freelancer</div>
+            <div class="resume__job">Art Director</div>
+            <div class="resume__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lobortis felis non tempor ullamcorper. Pellentesque cursus lectus a pulvinar dapibus. Nullam </div>
+          </div>
+          <div class="resume__left-item">
+            <time class="resume__date">2016 - 2017</time>
+            <div class="resume__workplace">The Best Agency</div>
+            <div class="resume__job">Art Director</div>
+            <div class="resume__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lobortis felis non tempor ullamcorper. Pellentesque cursus lectus a pulvinar dapibus. Nullam</div>
+          </div>
+          <div class="resume__left-item">
+            <time class="resume__date">2014 - 2016</time>
+            <div class="resume__workplace">Better Agency</div>
+            <div class="resume__job">Senior UI/UX Designer</div>
+            <div class="resume__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lobortis felis non tempor ullamcorper. Pellentesque cursus lectus a pulvinar dapibus. Nullam</div>
+          </div>
+          <div class="resume__left-item">
+            <time class="resume__date">2012 - 2014</time>
+            <div class="resume__workplace">Good Agency</div>
+            <div class="resume__job">UI/UX Designer</div>
+            <div class="resume__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lobortis felis non tempor ullamcorper. Pellentesque cursus lectus a pulvinar dapibus. Nullam</div>
+          </div>
+
+        </div>
+
+        <div class="resume__right">
+          <div class="education">
+            <h3 class="resume__side-title">education</h3>
+            <div class="resume__education-item">
+              <time class="resume__date">2005 - 2010</time>
+              <div class="resume__workplace">UI/UX Design</div>
+              <div class="resume__studyplace resume__studyplace--right">LA University, USA</div>
+            </div>
+
+            <div class="resume__education-item">
+              <time class="resume__date">2002 - 2005</time>
+              <div class="resume__workplace">UI/UX Design</div>
+              <div class="resume__studyplace resume__studyplace--right">LA Collage of Art, USA</div>
+            </div>
+          </div>
+
+          <div class="resume__skills">
+            <h3 class="resume__side-title resume__side-title--skill">skills</h3>
+            <div class="resume__skill-item">
+              <div class="resume__skill">
+                <p>UI/UX Design</p>
+              </div>
+            </div>
+            <div class="resume__skill-item">
+              <div class="resume__skill">
+                <p>Illustrator</p>
+              </div>
+            </div>
+            <div class="resume__skill-item">
+              <div class="resume__skill">
+                <p>Photoshop</p>
+              </div>
+            </div>
+            <div class="resume__skill-item">
+              <div class="resume__skill">
+                <p>Sketch</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="awards">
+            <h3 class="resume__side-title resume__side-title--award">awards</h3>
+
+            <div class="resume__award-item">
+              <time class="resume__date resume__date--right">2016</time>
+
+              <div class="resume__award-content">
+                <h3 class="resume__award-title">THE BEST APP INTERFACE</h3>
+                <div class="resume__job">UI/UX Magazine</div>
+                <p class="resume__text resume__text--right">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lobortis felis non</p>
+              </div>
+            </div>
+
+            <div class="resume__award-item">
+              <time class="resume__date resume__date--right">2016</time>
+
+              <div class="resume__award-content">
+                <h3 class="resume__award-title">THE BEST APP INTERFACE</h3>
+                <div class="resume__job">UI/UX Magazine</div>
+                <p class="resume__text resume__text--right">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lobortis felis non</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <button class="Button Button--resume" data-hire__me>hire me</button>
+    </div>
+  </section><!-- Resume modal -->
+
+  <!-- Talk modal -->
+  <section class="Pmodal" id="hire-me">
+    <div class="Pmodal__inner Pmodal__inner--talk">
+      <div class="talk__left">
+        <div class="talk__header">
+          <div class="talk__header-text">
+            <h2 class="talk__title">LET'S TALK!</h2>
+            <h4 class="talk__subtitle">CALL ME OR SEND ME A REQUEST</h4>
+          </div>
+
+          <button class="cross__btn" type="button" data-close='hire'>
+            <svg class="cross">
+              <use xlink:href="#cross"></use>
+            </svg>
+          </button>
+
+        </div>
+
+        <ul class="talk__contact">
+          <li>
+            <svg class="phone">
+              <use xlink:href="#phone"></use>
+            </svg>
+            <div class="talk__info">(200) 100 3000</div>
+          </li>
+          <li>
+            <svg class="e-mail">
+              <use xlink:href="#e-mail"></use>
+            </svg>
+            <div class="talk__info">designer@ui43.com</div>
+          </li>
+        </ul>
+
+        <form action="/" class="form" method="post">
+          <label class="form__label" for="input_e-mail">Adress e-mail</label>
+          <input class="form__input" name="input-email" type="text" placeholder="Adress e-mail" id="input_e-mail">
+
+          <label class="form__label" for="input_text">Request</label>
+          <textarea class="form__input form__input--request" name="input-text" type="text" placeholder="Type your request..." id="input_text"></textarea>
+        </form>
+
+        <div class="talk__left-footer">
+          <button class="Button Button--first">
+            <p>SEND</p>
+          </button>
+        </div>
+      </div>
+
+      <div class="talk__right">
+        <img class="talk__photo" src="https://via.placeholder.com/480x690/#717072" alt="">
+
+        <button type="button" class="cross__btn" data-close='hire'>
+          <svg class="cross">
+            <use xlink:href="#cross"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section><!-- Talk modal -->
+
+  <script src="js/slick.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

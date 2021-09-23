@@ -1,0 +1,75 @@
+//main: ../style.less
+
+.intro__socialButtons{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  margin-bottom: 2.8rem;
+
+  @media @mobile {
+    margin-bottom: 1.4rem;
+    justify-content: center;
+  }
+}
+
+.intro_button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 2.73rem;
+  height: 2.73rem;
+
+  margin-right: 0.66rem;
+
+  &:last-child{
+    margin-right: 0;
+  }
+
+  &--behance{
+    background-color: #1869FF;
+  }
+  &--dribble{
+    background-color: #E51A68;
+  }
+  &--in{
+    background-color: #007BB6;
+  }
+  &--facebook{
+    background-color: #3A5898;
+  }
+  &--instagramm{
+    background-color: #13578A;
+  }
+  &--twitter{
+    background-color: #56ACEF;
+  }
+
+  transition: transform .2s linear;
+
+  &:hover{
+    transform: translateY(-.33rem);
+  }
+}
+
+.social__item{
+  display: flex;
+  justify-content: center;
+
+  background-color: transparent;
+  fill: @white;
+
+  width: 1.4rem;
+  height: 1.4rem;
+
+  &--footer{
+    fill: @light-gray;
+
+    transition: background-color .2s linear, fill .2s linear;
+
+    &:hover{
+      fill: @white;
+    }
+  }
+}

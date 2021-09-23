@@ -1,0 +1,66 @@
+// compress: true
+@import "vars";
+
+html{
+  font-size: 15px;
+}
+
+body{
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  color: @black;
+}
+
+h1, h2, h3, h4, h5, h6, p, img{
+  margin: 0;
+}
+
+ul{
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+button{
+  cursor: pointer;
+  border: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+
+  &:focus {
+    outline: none;
+  }
+}
+//vendor
+@import "vendor/slick.less";
+
+//blocks
+@import "blocks/testimonials.less";
+@import "blocks/container.less";
+@import "blocks/footer.less";
+@import "blocks/header.less";
+@import "blocks/social.less";
+@import "blocks/button.less";
+@import "blocks/intro.less";
+@import "blocks/about.less";
+@import "blocks/work.less";
+@import "blocks/user.less";
+@import "blocks/blog.less";
+@import "blocks/form.less";
+@import "blocks/nav.less";
+@import "blocks/burger.less";
+@import "blocks/cross.less";
+
+//Modals
+@import "Modals/ResumeModal.less";
+@import "Modals/Pmodal.less";
+@import "Modals/Talk.less";
+
+//helpers
+@import "helpers";

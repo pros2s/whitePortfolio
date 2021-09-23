@@ -1,0 +1,123 @@
+//main: ../style.less
+
+.talk__left{
+  background-color: #fff;
+
+  padding: 2rem;
+  width: 47%;
+  min-height: 676px;
+
+  @media @tablet {
+    position: relative;
+    width: 600px;
+
+    padding-left: 1rem;
+    padding-left: 1rem;
+
+    margin-left: 3rem;
+    margin-right: 3rem;
+
+    min-height: auto;
+  }
+
+  @media @mobile {
+    width: 500px;
+
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  @media @mobileSmall {
+    width: auto;
+  }
+
+  @media @mobileMicro {
+    padding-bottom: .5rem;
+  }
+}
+
+.talk__header{
+  margin-bottom: 2rem;
+
+  @media @mobileSmall {
+    margin-bottom: 1.2rem;
+  }
+}
+
+.talk__header-text {
+  margin-right: 2rem;
+}
+
+.talk__title{
+  font-weight: 700;
+  font-size: 3rem;
+  color: @black;
+
+  @media @mobile {
+    font-size: 2.5rem;
+  }
+
+  @media @mobileSmall {
+    font-size: 2rem;
+  }
+}
+
+.talk__subtitle{
+  font-weight: 400;
+  font-size: 1.06rem;
+  color: @black;
+
+  @media @mobileSmall {
+    font-size: .95rem;
+  }
+
+  @media @mobileMicro {
+    font-size: .7rem;
+  }
+}
+
+.talk__contact{
+  margin-bottom: 3rem;
+
+  li{
+    display: flex;
+    align-items: center;
+
+    margin-bottom: .5rem;
+  }
+
+  svg{
+    height: 18px;
+    width: 18px;
+
+    &.e-mail{
+      height: 17px;
+    }
+
+    margin-right: 1rem;
+  }
+
+  @media @mobileSmall {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.talk__right{
+  max-height: 676px;
+  max-width: 53%;
+  overflow: hidden;
+
+  @media @tablet {
+    display: none;
+  }
+}
+
+.talk__left-footer {
+  text-align: right;
+  @media @mobileSmall {
+    text-align: center;
+  }
+}

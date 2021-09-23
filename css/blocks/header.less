@@ -1,0 +1,42 @@
+//main: ../style.less
+
+.header{
+  position: relative;
+
+  &.fixed {
+    position: fixed;
+    z-index: 10;
+
+    width: 100%;
+
+    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.3);
+    
+    animation: headerOpen .5s ease;
+  }
+}
+
+.header.fixed .container {
+  padding: 0;
+}
+
+.header__inner{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 0;
+
+  .header.fixed & {
+    padding: .4rem .6rem .2rem;
+  }
+}
+
+@keyframes headerOpen {
+  from {
+    top: -100%;
+  }
+
+  to {
+    top: 0;
+  }
+}

@@ -1,0 +1,129 @@
+//main: ../style.less
+.burger {
+  display: none;
+
+  @media (max-width: 855px) {
+    background: none;
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 30px;
+    height: 23px;
+    padding: 0;
+
+    z-index: 10;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.burger__item {
+  display: none;
+
+  @media (max-width: 855px) {
+    position: relative;
+
+    display: block;
+    cursor: pointer;
+
+    width: 2rem;
+    height: 3px;
+    background-color: @black;
+
+    transition: .3s;
+
+    &:before,
+    &:after {
+      position: absolute;
+      top: -7px;
+      right: 0;
+      z-index: 10;
+
+      content: "";
+
+      width: 2rem;
+      height: 3px;
+      background-color: @black;
+
+      transition: .4s;
+    }
+
+    &:after {
+      top: 7px;
+    }
+  }
+}
+
+.burger__nav {
+
+  @media (max-width: 855px) {
+    display: none;
+
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+    position: absolute;
+    right: 0;
+    top: 100%;
+    z-index: 20;
+
+    width: 25%;
+    max-height: 300px;
+    padding: 0 1rem 1rem;
+
+    background-color: @white;
+
+    animation: burger-nav .4s;
+  }
+
+  .header.fixed & {
+    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, .3);
+  }
+}
+
+#checkMenu {
+  display: none;
+
+  &:checked ~ label .burger__item{
+    transform: rotate(45deg);
+    top: 0;
+  }
+
+  &:checked ~ label .burger__item:before  {
+    display: none;
+  }
+
+  &:checked ~ label .burger__item:after {
+    transform: rotate(-90deg);
+    top: 0;
+  }
+
+  &:checked ~ label .burger__nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &:checked ~ label .nav__item {
+    display: block;
+    text-align: center;
+    max-width: 300px;
+  }
+}
+
+@keyframes burger-nav {
+  from {
+    right: -100%;
+  }
+
+  to {
+    right: 0;
+  }
+}

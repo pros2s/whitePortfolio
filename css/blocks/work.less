@@ -1,0 +1,82 @@
+//main: ../style.less
+
+.work__filter{
+  margin: 2.6rem 0 2.3rem;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+
+  @media @mobileSmall {
+    margin: 1rem 0 1rem;
+  }
+}
+
+.work__filter-title{
+  font-size: .8rem;
+  font-weight: 400;
+  line-height: 2.13rem;
+  text-decoration: none;
+
+  color: fade(@black, 70%);
+
+  &:not(:first-child){
+    margin-left: 2rem;
+  }
+}
+
+.work__projects{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  margin: -1rem;
+}
+
+.work__item{
+  box-shadow: 0 0 4px fade(#000, 25%);
+  margin: 1rem;
+  max-width: 345px;
+
+  border-radius: .66rem;
+
+  overflow: hidden;
+
+  transition: box-shadow .2s linear;
+
+  &:hover{
+    cursor: pointer;
+    box-shadow: 0 0 25px fade(#000, 25%);
+  }
+
+  @media @notebook {
+    &:nth-last-child(-n + 4) {
+      display: none;
+    }
+  }
+}
+
+.work__category{
+  font-size: .8rem;
+  font-weight: 400;
+  line-height: 1rem;
+  color: @black;
+
+  margin-bottom: .35rem;
+
+  text-transform: uppercase;
+}
+
+.work__footer{
+  padding: .85rem .6rem .45rem .8rem;
+}
+
+.work__footer-title{
+  display: flex;
+  justify-content: space-between;
+
+  font-size: 1.06rem;
+  font-weight: 700;
+  line-height: 1.38rem;
+  color: @black;
+  text-transform: uppercase;
+}

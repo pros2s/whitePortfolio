@@ -1,0 +1,275 @@
+//main: ../style.less
+
+.Pmodal{
+  position: fixed;
+
+  overflow: auto;
+
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  display: none;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 0 1rem;
+
+  background-color: fade(#494848, 95%);
+
+  &.open{
+    display: flex;
+  }
+
+  @media @notebook {
+    padding: 2.1rem 1rem;
+  }
+
+  @media @tablet {
+    padding: 2.1rem .3rem;
+  }
+
+  @media @mobile {
+    padding: 0 .3rem;
+  }
+
+  @media @mobileMicro {
+    padding: 0;
+  }
+}
+
+.Pmodal__inner{
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  max-width: 1200px;
+  height: auto;
+
+  margin: auto;
+
+  transform: rotateX(90deg);
+  transition: transform .2s linear;
+
+  &--talk{
+    width: 900px;
+    height: auto;
+  }
+
+  @media @tablet {
+    justify-content: center;
+    flex-direction: column;
+
+    width: auto;
+  }
+}
+
+.Pmodal__left{
+  max-height: 774px;
+  width: 787px;
+
+  @media @notebook {
+    max-width: 650px;
+  }
+
+  @media @tablet {
+    max-width: 787px;
+  }
+
+  @media @mobile {
+    display: none;
+  }
+}
+
+.Pmodal__right{
+  position: relative;
+
+  height: 774px;
+  max-width: 413px;
+
+  background-color: #fff;
+
+  @media @tablet {
+    max-width: 787px;
+    height: auto;
+  }
+
+  @media @mobile {
+    margin: auto 5rem;
+  }
+
+  @media @mobileSmall {
+    margin: .2rem 2rem;
+  }
+
+  @media @mobileMicro {
+    margin: .5rem .5rem;
+  }
+}
+
+.Pmodal__header{
+  height: 3.3rem;
+
+  @media @notebook {
+    height: 1.5rem;
+  }
+}
+
+.Pmodal__content{
+  padding: 0 6.6rem 0 1.7rem;
+  margin-bottom: 7.66rem;
+
+  @media @notebook {
+    padding-right: 3rem;
+    margin-bottom: 5.5rem;
+  }
+
+  @media @mobileSmall {
+    padding-right: 2rem;
+    padding-left: 1.2rem;
+  }
+}
+
+.Pmodal__title{
+  display: flex;
+  flex-wrap: wrap;
+
+  h2{
+    font-weight: 700;
+    font-size: 2.1rem;
+    color: @black;
+    text-transform: uppercase;
+
+    padding-bottom: 0.15rem;
+
+    @media @mobileSmall {
+      font-size: 1.5rem;
+    }
+  }
+
+  h3{
+    max-width: 117px;
+
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: @gray;
+    text-transform: uppercase;
+
+    border-right: 1px solid @gray;
+    padding-right: 1rem;
+
+    @media @mobileSmall {
+      font-size: 1rem;
+    }
+  }
+
+  time{
+    max-width: 54px;
+
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: @gray;
+
+    padding-left: 1rem;
+  }
+
+  @media @tablet {
+    flex-direction: column;
+  }
+}
+
+.Pmodal__subtitle {
+  display: flex;
+  align-items: center;
+}
+
+.Pmodal__client{
+  margin: 2.2rem 0;
+
+  h4{
+    font-size: 1.06rem;
+    font-weight: 700;
+    color: @black;
+  }
+
+  p{
+    font-style: italic;
+    font-size: .94rem;
+    color: @gray;
+  }
+
+  @media @notebook {
+    margin: 1.2rem 0;
+  }
+
+  @media @mobileSmall {
+    margin: .9rem 0;
+  }
+}
+
+.Pmodal__footer {
+  position: absolute;
+  bottom: 1rem;
+  z-index: 1;
+
+  width: 100%;
+}
+
+.Pmodal__footer-inner {
+  position: relative;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.Pmodal__text{
+  p{
+    font-size: .8rem;
+    font-weight: 300;
+    line-height: 2;
+    color: @gray;
+
+    @media @mobileSmall {
+      line-height: 1.8;
+    }
+  }
+}
+
+.Pmodal__btn {
+  display: flex;
+  background-color: transparent;
+
+  align-items: center;
+
+  &--prev {
+    padding-left: 1.7rem;
+  }
+
+  &--next {
+    padding-right: 1.7rem;
+  }
+}
+
+.Pmodal__footer-text {
+  font-size: .94rem;
+  color: @black;
+  font-weight: 400;
+
+  text-transform: uppercase;
+}
+
+.arrow {
+  height: 16px;
+  width: 13px;
+
+  margin-left: 0.5rem;
+
+  &--left {
+    margin-right: 0.5rem;
+    margin-left: 0;
+
+    transform: rotate(180deg);
+  }
+}

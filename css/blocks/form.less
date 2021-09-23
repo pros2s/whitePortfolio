@@ -1,0 +1,44 @@
+//main: ../style.less
+
+.form{
+  display: flex;
+  flex-direction: column;
+}
+
+.form__label{
+  font-weight: 700;
+  color: @black;
+  font-size: .8rem;
+
+  margin-bottom: 0.7rem;
+}
+
+.form__input{
+  padding: 1.2rem 1.8rem;
+  margin-bottom: 1.8rem;
+
+  border: 1px solid fade(#707070, 30%);
+  border-radius: 27px;
+
+  font-family: inherit;
+
+  &:focus{
+    outline: none;
+    border-color: @black;
+  }
+
+  &--request{
+    min-height: 200px;
+
+    margin-bottom: 2rem;
+    resize: none;
+
+    @media @mobileSmall {
+      margin-bottom: 1rem;
+    }
+  }
+
+  @media @mobileSmall {
+    margin-bottom: 1rem;
+  }
+}

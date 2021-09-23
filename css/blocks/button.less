@@ -1,0 +1,100 @@
+//main: ../style.less
+
+.Button{
+  border: .06em solid #6A696B;
+  border-radius: 2.4em;
+
+  background-color: transparent;
+
+  color: @gray;
+
+  transition: background-color .2s linear, color .2s linear, box-shadow .2s linear, border-color .2s linear;
+
+  &--first{
+    padding: 1em 3.26em .7em 3em;
+    margin-right: .6em;
+
+    @media @mobile {
+      margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 441px) {
+      margin-right: 0;
+    }
+  }
+
+  &--second{
+    padding: 1em 1.73em .7em;
+  }
+
+  &--min{
+    justify-content: center;
+
+    font-size: .93rem;
+    font-weight: 700;
+    line-height: 1.33rem;
+
+    color: @black;
+
+    padding: .66em 1.2em;
+    margin-top: 1em;
+
+    border-width: 2px;
+  }
+
+  & p{
+    font-size: 1.06rem;
+    font-weight: 400;
+    line-height: 1.66rem;
+  }
+
+  &:hover{
+    background-color: @black;
+    box-shadow: 2px 2px 10px fade(#000, 24%);
+    color: @white;
+
+    border-color: @black;
+  }
+
+  &--footer{
+    padding: .4rem 1.2rem;
+    margin-left: .8rem;
+
+    font-size: .94rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: @light-gray;
+  }
+
+  &--award{
+    padding: .7rem 1rem;
+    min-width: 145px;
+
+    text-transform: uppercase;
+
+    + button{
+      margin-left: 1rem;
+
+      @media @mobileMicro {
+        margin-left: 0;
+        margin-top: .3rem;
+      }
+    }
+  }
+
+  &--resume{
+    text-transform: uppercase;
+    padding: 1rem 3rem;
+
+    margin-bottom: 4rem;
+
+    @media @tablet {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  @media @mobile {
+    width: 100%;
+    max-width: 200px;
+  }
+}
